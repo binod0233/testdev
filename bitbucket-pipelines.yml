@@ -5,3 +5,10 @@ pipelines:
           name: Just a simple echo!
           script:
             - echo "Hello world!"
+    branch2:
+      - step:
+          name: Somewhat fake build process
+          script:
+            - rsync -av --progress . dist --exclude dist
+          artifacts:
+            - dist/**
